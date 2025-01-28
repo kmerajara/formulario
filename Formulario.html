@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Login</title>
+</head>
+<body class="body">
+    <div class="container">
+        <div class="advertisement">
+            Publicidad Aquí
+        </div>
+        <div class="content" id="login-form">
+            <h2>Iniciar Sesión</h2>
+            <form>
+                <input type="text" class="input-field" placeholder="Usuario" required>
+                <input type="password" class="input-field" placeholder="Contraseña" required>
+                <div class="remember-me">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Recordar contraseña</label>
+                </div>
+                <button type="submit" class="btn">Ingresar</button>
+                <button type="button" class="btn" onclick="showRegisterStep1()">Registrarse</button>
+            </form>
+        </div>
+        
+        <div class="content hidden" id="register-step1">
+            <h2>Registro - Paso 1</h2>
+            <form>
+                <select class="input-field" required>
+                    <option value="">Seleccione Tipo de Documento</option>
+                    <option value="DNI">DNI</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                    <option value="Otro">Otro</option>
+                </select>
+                <input type="text" class="input-field" placeholder="Nombres" required>
+                <input type="text" class="input-field" placeholder="Apellido Paterno" required>
+                <input type="text" class="input-field" placeholder="Apellido Materno" required>
+                <select class="input-field" required>
+                    <option value="">Genero</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Masculino">Masculino</option>
+                </select>
+                <input type="text" class="input-field" placeholder="Telefono" required>
+                <input type="email" class="input-field" placeholder="Correo Electrónico Personal" required>
+                <input type="email" class="input-field" placeholder="Correo Electrónico InstitucionalSSS" required>
+                <input type="text" class="input-field" placeholder="Usuario" required>
+                <input type="password" class="input-field" placeholder="Contraseña" required>
+                <button type="button" class="btn" onclick="showRegisterStep2()">Siguiente</button>
+            </form>
+        </div>
+        
+        <div class="content hidden" id="register-step2">
+            <h2>Registro - Paso 2</h2>
+            <form>
+                <label for="birthdate">Fecha de Nacimiento</label>
+                <input type="date" class="input-field" placeholder="Fecha de Nacimiento" required>
+                <label for="birthdate">Fecha de ingreso</label>
+                <input type="date" class="input-field" placeholder="Fecha de Ingreso" required>
+                <label for="birthdate">Fecha de vencimineto</label>
+                <input type="date" class="input-field" placeholder="Fecha de Vencimineto" required>
+                <button type="submit" class="btn">Finalizar Registro</button>
+                <button type="button" class="btn" onclick="showRegisterStep1()">Atrás</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        function showRegisterStep1() {
+            document.getElementById("login-form").classList.add("hidden");
+            document.getElementById("register-step1").classList.remove("hidden");
+            document.getElementById("register-step2").classList.add("hidden");
+        }
+        function showRegisterStep2() {
+            document.getElementById("register-step1").classList.add("hidden");
+            document.getElementById("register-step2").classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>
