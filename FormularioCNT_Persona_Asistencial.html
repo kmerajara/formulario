@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+
+    <header class="header">
+        Registro de Personal Asistencial
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <h3>Menú</h3>
+            <ul>
+                <li>Inicio</li>
+                <li>Registros</li>
+                <li>Configuración</li>
+            </ul>
+        </aside>
+
+        <section class="content">
+            <h2>Formulario de Registro</h2>
+
+            <!-- 🔹 Botones de mantenimiento en la parte superior -->
+            <div class="form-buttons">
+                <button type="button" onclick="agregarRegistro()">Agregar Registro</button>
+                <button type="button" onclick="editarRegistro()">Gaurdar Edicion</button>
+                <button type="button" onclick="eliminarRegistro()">Eliminar Registro</button>
+            </div>
+            <selection class="Vs1">
+            <form id="registroForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="codigo">Código Autogenerado:</label>
+                        <input type="text" id="codigo" name="codigo" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="id" name="id">Documento de Identidad</label>
+                        <select id="idd" name="idd">
+                            <option value="">Seleccione una opción</option>
+                            <option value="dni">DNI</option>
+                            <option value="pasaporte">Pasaporte</option>
+                            <option value="CEX">CEX</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="iddni">Número de Documento</label>
+                        <input type="text" id="iddni" name="iddni" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidop">Apellido Paterno</label>
+                        <input type="text" id="apellidop" name="apellidop" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidom">Apellido Materno</label>
+                        <input type="text" id="apellidom" name="apellidom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sexo">Sexo</label>
+                        <select id="sexo" name="sexo">
+                            <option value="">Seleccione una opción</option>
+                            <option value="m">Masculino</option>
+                            <option value="f">Femenino</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fenac">Fecha de Nacimiento</label>
+                        <input type="date" id="fenac" name="fenac" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">Teléfono</label>
+                        <input type="text" id="tel" name="tel" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="especialidad">Especialidad</label>
+                        <select id="especialidad" name="especialidad">
+                            <option value="">Seleccione una opción</option>
+                            <option value="cardiologia">Cardiología</option>
+                            <option value="dermatologia">Dermatología</option>
+                            <option value="neurologia">Neurología</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="correo">Correo Personal</label>
+                        <input type="email" id="correop" name="correop" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="correoE">Correo Institucional</label>
+                        <input type="email" id="correoe" name="correoe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cmp">CMP</label>
+                        <input type="text" id="cmp" name="cmp" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rne">RNE</label>
+                        <input type="text" id="rne" name="rne" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="estado">Estado</label>
+                        <select id="estado" name="estado">
+                            <option value="">Seleccione una opción</option>
+                            <option value="activo">Activo</option>
+                            <option value="inactivo">Inactivo</option>
+                        </select> 
+                    </div>
+                    <div class="form-group">
+                        <label for="area">Area</label>
+                        <select id="area" name="area">
+                            <option value="">Seleccione una opción</option>
+                            <option value="Radiologia">Radiologia</option>
+                            <option value="Teleurgencia">Teleurgencia</option>
+                            <option value="Gcitas">Gestion citas</option>
+                            <option value="ti">TI</option>
+                            <option value="Gcitas">Especili</option>
+                        </select> 
+                    </div>
+                </div>
+            </form>
+        </selection>
+        </section>
+    </div>
+    <script src="script.js"></script>
+
+    <h2>Registros</h2>
+
+    <table id="tablaRegistros">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>ID</th>
+                <th>ID DNI</th>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Sexo</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Teléfono</th>
+                <th>Especialidad</th>
+                <th>Correo Personal</th>
+                <th>Correo Empresarial</th>
+                <th>CMP</th>
+                <th>RNE</th>
+                <th>Estado</th>
+                <th>Área</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+</body>
+</html>
+
